@@ -32,7 +32,7 @@ public class Test {
 	
 	@org.junit.Before
 	public void initFactory() {
-		//this.factory = new IteratorOfListsFactoryImpl();
+		this.factory = new IteratorOfListsFactoryImpl();
 	}
 
 	@org.junit.Test

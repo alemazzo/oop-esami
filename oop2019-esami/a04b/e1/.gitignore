@@ -2,3 +2,9 @@
 /Parser.class
 /ParsersFactory.class
 /Test.class
+/ParsersFactoryImpl.class
+/ParsersFactoryImpl$1.class
+/ParsersFactoryImpl$2.class
+/ParsersFactoryImpl$3.class
+/ParsersFactoryImpl$BaseParser.class
+/ParsersFactoryImpl$BaseParser$Emptyable.class

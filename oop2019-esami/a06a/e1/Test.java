@@ -37,7 +37,7 @@ public class Test {
 
 	@org.junit.Before
 	public void initFactory() {
-		//this.srf = new SRServiceFactoryImpl();
+		this.srf = new SRServiceFactoryImpl();
 	}
 
 	@org.junit.Test
@@ -81,7 +81,7 @@ public class Test {
 		// 0 riceve ed esce, poi 1 spedisce
 		sr.goReceive(0);
 		sr.exit(0);
-		sr.goReceive(1);
+		sr.goSend(1);
 
 		assertEquals(3, sr.enter());
 
@@ -105,7 +105,7 @@ public class Test {
 			fail("wrong exception thrown");
 		}
 
-		// 1 esce, e a questo punto 2 può accedere
+		// 1 esce, e a questo punto 2 può spedire
 		sr.exit(1);
 		sr.goSend(2);
 	}
@@ -120,8 +120,8 @@ public class Test {
 	}
 	
 	@org.junit.Test
-	public void testManyReceiveAndOneSend() {
-		// test di un serive lascia ricevere più clienti, ma spedire un solo processo
+	public void testManyReceiveAndMaxTwoSend() {
+		// test di un service che lascia ricevere più clienti, ma spedire al massimo due clienti
 		// alla volta
 		final SRService sr = this.srf.createManyReceiveAndMaxTwoSend();
 
@@ -137,7 +137,7 @@ public class Test {
 		assertEquals(3, sr.enter());
 		assertEquals(4, sr.enter());
 
-		// 2 può ricevere
+		// 3 può spedire
 		sr.goSend(3);
 
 		// 4 non può spedire, perché stanno già spedendo 2 e 3

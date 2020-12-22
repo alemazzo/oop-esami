@@ -2,3 +2,7 @@
 /Test.class
 /Workflow.class
 /WorkflowsFactory.class
+/WorkflowsFactoryImpl.class
+/WorkflowsFactoryImpl$BasicWorkflow.class
+/WorkflowsFactoryImpl$SequentialWorkflow.class
+/WorkflowsFactoryImpl$1.class

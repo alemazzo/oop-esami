@@ -35,7 +35,7 @@ public class Test {
 	
 	@org.junit.Before
 	public void initFactory() {
-		//this.wf = new WorkflowsFactoryImpl();
+		this.wf = new WorkflowsFactoryImpl();
 	}
 
 	@org.junit.Test

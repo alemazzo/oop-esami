@@ -2,3 +2,10 @@
 /GUIExample.class
 /Pair.class
 /Test.class
+/Logic.class
+/LogicImpl.class
+/Logic$Status.class
+/LogicImpl$Element.class
+/Directions.class
+/LogicImpl$Element$Directions.class
+/LogicImpl$Directions.class

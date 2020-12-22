@@ -1,0 +1,12 @@
+/Pair.class
+/SequencesProvider.class
+/SequencesProvidersFactory.class
+/Test.class
+/SequencesProvidersFactoryImpl.class
+/SequencesProvidersFactoryImpl$1.class
+/SequencesProvidersFactoryImpl$2.class
+/SequencesProvidersFactoryImpl$BasicSequenceProvider.class
+/SequencesProvidersFactoryImpl$AlterningSequenceProvider.class
+/SequencesProvidersFactoryImpl$BoundedSequenceProvider.class
+/AlterningSequenceProvider.class
+/BoundedSequenceProvider.class

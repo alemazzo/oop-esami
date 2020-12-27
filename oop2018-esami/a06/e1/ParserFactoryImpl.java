@@ -119,7 +119,7 @@ public class ParserFactoryImpl implements ParserFactory {
 			private MultipleParser endParser = new MultipleParser(List.of(end));
 			private AnyParser middleParser = new AnyParser(elem, elemCount);
 			
-			private List<Parser> parsers = new ArrayList<Parser>(beginParser, middleParser, endParser);
+			//private List<Parser> parsers = new ArrayList<Parser>(List.of(beginParser, middleParser, endParser));
 			
 			@Override
 			public void reset() {

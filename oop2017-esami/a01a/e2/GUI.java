@@ -24,10 +24,9 @@ public class GUI extends JFrame{
 				
 		ActionListener ac = e -> {
 			final JButton jb = (JButton)e.getSource();
-			final int index = this.buttons.indexOf(jb);
-			final int res = this.logic.hit(index);
+			final int res = this.logic.hit(this.buttons.indexOf(jb));
 			jb.setText("" + res);
-			jb.setEnabled(res == size ? false : true);
+			jb.setEnabled(this.logic.isDisabled(this.buttons.indexOf(jb)) ? false : true);
 			if(this.logic.isGameOver()) {
 				System.exit(1);
 			}

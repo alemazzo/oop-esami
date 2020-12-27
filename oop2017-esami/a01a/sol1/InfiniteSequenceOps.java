@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import aula.ex1.InfiniteSequence;
 
 /**
  * Utilities for working with infinite sequences, including factories, combinators, and selectors

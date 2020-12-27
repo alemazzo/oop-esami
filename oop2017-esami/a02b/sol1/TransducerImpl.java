@@ -2,9 +2,9 @@ package a02b.sol1;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
-import esami.ex2013.a05.e3.Function;
 
 public class TransducerImpl<X,Y> implements Transducer<X, Y> {
 	

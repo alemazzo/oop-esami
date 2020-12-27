@@ -2,10 +2,8 @@ package a01a.sol1;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import aula.ex1.InfiniteSequence;
 
 /**
  * @author mirko

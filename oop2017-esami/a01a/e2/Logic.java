@@ -8,4 +8,6 @@ public interface Logic {
 
 	boolean isGameOver();
 
+	boolean isDisabled(int indexOf);
+
 }

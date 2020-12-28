@@ -32,7 +32,6 @@ public class InfiniteSequenceOpsImpl implements InfiniteSequenceOps {
 	public InfiniteSequence<Double> averageOnInterval(InfiniteSequence<Double> iseq, int intervalSize) {
 		return this.fromStream(Stream.iterate(0, i -> i + 1).map(i -> Stream.iterate(0, j -> j + 1)
 				.limit(intervalSize).map(j -> iseq.nextElement()).reduce((a, b) -> a + b).get() / intervalSize));
-
 	}
 
 	@Override

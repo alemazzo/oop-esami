@@ -49,5 +49,4 @@ public class LogicImpl implements Logic {
 		return this.values.stream().distinct().count() == 1;
 	}
 
-
 }

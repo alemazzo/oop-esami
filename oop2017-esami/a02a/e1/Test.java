@@ -23,7 +23,7 @@ public class Test {
 	 * 
 	 */
 	
-	/*
+	
 	
 	@org.junit.Test
 	public void testPower2OK() {
@@ -177,7 +177,7 @@ public class Test {
 		sa.acceptElement(0);
 	}
 	
-	*/
+	
 
 }
 

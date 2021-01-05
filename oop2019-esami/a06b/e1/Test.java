@@ -34,7 +34,7 @@ public class Test {
 	
 	@org.junit.Before
 	public void initFactory() {
-		// this.machine = new MiniAssemblyMachineImpl();
+		this.machine = new MiniAssemblyMachineImpl();
 	}
 	
 	@org.junit.Test

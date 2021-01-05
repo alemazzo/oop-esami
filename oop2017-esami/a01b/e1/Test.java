@@ -28,7 +28,7 @@ import java.util.*;
 
 public class Test {
 	
-	/*
+	
 	// funzionalità a fini interni, che estrae tempi e valori da un trace
 	private <X> Pair<List<Integer>,List<X>> traceToPairs(Trace<X> t){
 		Iterator<Event<X>> it = t.iterator();
@@ -134,5 +134,5 @@ public class Test {
         assertEquals(p.getFst(),Arrays.asList(0,5));
         assertEquals(p.getSnd(),Arrays.asList("b","b"));
     }
-    */
+    
 }

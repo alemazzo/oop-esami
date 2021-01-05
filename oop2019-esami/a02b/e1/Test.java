@@ -39,7 +39,7 @@ public class Test {
 	
 	@org.junit.Before
 	public void initFactory() {
-		//this.wf = new ExamsFactoryImpl();
+		this.wf = new ExamsFactoryImpl();
 	}
 
 	@org.junit.Test

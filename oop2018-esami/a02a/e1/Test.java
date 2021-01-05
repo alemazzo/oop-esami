@@ -36,7 +36,7 @@ import a02a.e1.Tournament.Type;
 
 public class Test {
 	
-	/*
+	
 	private static final Map<String,Integer> INITIAL_RANKING = new HashMap<String,Integer>();
 	static{
 		INITIAL_RANKING.put("Nadal", 6000);
@@ -100,8 +100,9 @@ public class Test {
 		assertEquals(t.resultingRanking().get("Federer").intValue(),250+7000);
 		assertEquals(t.resultingRanking().get("Nadal").intValue(),1250+6000);
 		assertEquals(t.resultingRanking().get("Djokovic").intValue(),2500+6500);
-		assertEquals(t.resultingRanking().get("Fognini").intValue(),4000);
 		assertEquals(t.resultingRanking().get("Tsitsipas").intValue(),500);
+		assertEquals(t.resultingRanking().get("Fognini").intValue(),4000);
+		
 		assertEquals(t.winner(),"Djokovic");
 		assertEquals(t.rank(),Arrays.asList("Djokovic","Federer","Nadal","Fognini","Tsitsipas"));
     }
@@ -195,5 +196,5 @@ public class Test {
 		         .setType(null)
 		         .build(); 
 	}
-	*/
+	
 }

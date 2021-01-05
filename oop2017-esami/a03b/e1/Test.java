@@ -28,7 +28,7 @@ public class Test {
 	 * 
 	 */
 	
-	/* Si tolga questo commento!!!
+	
 	private ExamsManagement data;
 	
 	@org.junit.Before
@@ -120,5 +120,5 @@ public class Test {
 	public void testCantRegisterSameLabTwice() {
 		data.registerLabEvaluation(60, 18, 3);
 	}
-	*/
+	
 }

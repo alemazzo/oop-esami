@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 public class IteratorOfListsFactoryImpl implements IteratorOfListsFactory {
 
-	public <E> IteratorOfLists<E> fromStream(Supplier<Stream<List<E>>> stream) {
+	private <E> IteratorOfLists<E> fromStream(Supplier<Stream<List<E>>> stream) {
 
 		return new IteratorOfLists<E>() {
 

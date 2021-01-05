@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
 public class WorkflowsFactoryImpl implements WorkflowsFactory {
 
 	private class BasicWorkflow<T> implements Workflow<T>{
@@ -54,7 +53,6 @@ public class WorkflowsFactoryImpl implements WorkflowsFactory {
 		public boolean isCompleted() {
 			return this.tasks.size() == 0;
 		}
-	
 	}
 	
 	@Override
@@ -86,5 +84,4 @@ public class WorkflowsFactoryImpl implements WorkflowsFactory {
 		allTasks.addAll( ((BasicWorkflow<T>)second).getSequentialTasks());
 		return new BasicWorkflow<>(allTasks);
 	}
-
 }

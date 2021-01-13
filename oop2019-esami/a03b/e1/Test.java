@@ -39,7 +39,7 @@ public class Test {
 	
 	@org.junit.Before
 	public void initFactory() {
-		//this.pof = new PostOfficeFactoryImpl();
+		this.pof = new PostOfficeFactoryImpl();
 	}
 	
 	// controlli base su un qualunque PostOffice

@@ -34,7 +34,7 @@ public class Test {
 	
 	@org.junit.Before
 	public void initFactory() {
-		// this.factory = new IteratorIteratorFactoryImpl();
+		this.factory = new IteratorIteratorFactoryImpl();
 	}
 
 	@org.junit.Test

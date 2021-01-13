@@ -25,14 +25,13 @@ import java.util.*;
  */
 
 import a03a.e1.Evaluation.*;
-import static a03a.e1.Evaluation.Result.*;
 
 public class Test {
 	
 	private EvaluationBuilder builder;
 	private Evaluation ev;
 	
-	/*
+	
 	
 	// questo metodo istanzia il builder e lo usa per caricare vari questionari studenti 
 	@org.junit.Before
@@ -42,17 +41,17 @@ public class Test {
 		// .. dando "decidamente si" a "complessivamente soddisfatto" e "qualità del docente"
 		// .. e "più si che no" a "sei interessato al corso"
 		// e simile per gli altri
-		builder.addEvaluationByResults("PPS", 1, FULLY_POSITIVE, WEAKLY_POSITIVE, FULLY_POSITIVE)
-			   .addEvaluationByResults("PPS", 2, WEAKLY_POSITIVE, WEAKLY_POSITIVE, WEAKLY_NEGATIVE)
-		       .addEvaluationByResults("PPS", 3, FULLY_POSITIVE, FULLY_POSITIVE, FULLY_POSITIVE)
-		       .addEvaluationByResults("LPMC", 1, FULLY_POSITIVE, FULLY_POSITIVE, FULLY_POSITIVE)
-		       .addEvaluationByResults("LPMC", 2, FULLY_NEGATIVE, FULLY_NEGATIVE, FULLY_NEGATIVE)
-		       .addEvaluationByResults("LPMC", 3, FULLY_POSITIVE, FULLY_POSITIVE, FULLY_NEGATIVE);
+		builder.addEvaluationByResults("PPS", 1, Result.FULLY_POSITIVE, Result.WEAKLY_POSITIVE, Result.FULLY_POSITIVE)
+			   .addEvaluationByResults("PPS", 2, Result.WEAKLY_POSITIVE, Result.WEAKLY_POSITIVE, Result.WEAKLY_NEGATIVE)
+		       .addEvaluationByResults("PPS", 3, Result.FULLY_POSITIVE, Result.FULLY_POSITIVE, Result.FULLY_POSITIVE)
+		       .addEvaluationByResults("LPMC", 1, Result.FULLY_POSITIVE, Result.FULLY_POSITIVE, Result.FULLY_POSITIVE)
+		       .addEvaluationByResults("LPMC", 2, Result.FULLY_NEGATIVE, Result.FULLY_NEGATIVE, Result.FULLY_NEGATIVE)
+		       .addEvaluationByResults("LPMC", 3, Result.FULLY_POSITIVE, Result.FULLY_POSITIVE, Result.FULLY_NEGATIVE);
 		// carico un altro questionario, con diversa ma equivalente modalità
 		Map<Question,Result> results = new EnumMap<>(Question.class);
-		results.put(Question.OVERALL, FULLY_POSITIVE);
-		results.put(Question.INTEREST, FULLY_NEGATIVE);
-		results.put(Question.CLARITY, WEAKLY_POSITIVE);
+		results.put(Question.OVERALL, Result.FULLY_POSITIVE);
+		results.put(Question.INTEREST, Result.FULLY_NEGATIVE);
+		results.put(Question.CLARITY, Result.WEAKLY_POSITIVE);
 		builder.addEvaluationByMap("LPMC", 4, results); // studente 4 sul corso "LPMC"
 		this. ev = builder.build();
 	}
@@ -60,32 +59,32 @@ public class Test {
 	@org.junit.Test
     public void testResults() {
 		// lo studente 1, sul corso "PPS", ha risposto "decidamente si" alla domanda "sei complessivamente soddisfatto"
-		assertEquals(ev.results("PPS", 1).get(Question.OVERALL),FULLY_POSITIVE);
+		assertEquals(ev.results("PPS", 1).get(Question.OVERALL),Result.FULLY_POSITIVE);
 		// etc..
-		assertEquals(ev.results("LPMC", 3).get(Question.CLARITY),FULLY_NEGATIVE);
-		assertEquals(ev.results("LPMC", 4).get(Question.INTEREST),FULLY_NEGATIVE);
+		assertEquals(ev.results("LPMC", 3).get(Question.CLARITY),Result.FULLY_NEGATIVE);
+		assertEquals(ev.results("LPMC", 4).get(Question.INTEREST),Result.FULLY_NEGATIVE);
 		assertTrue(ev.results("LPMC", 5).isEmpty());
 	}
 	
 	@org.junit.Test
     public void testResultsCountForCourseAndCriterion() {
 		// il corso "PPS" ha ricevuto due risposte "decidamente si" alla domanda "sei complessivamente soddisfatto"
-		assertEquals(ev.resultsCountForCourseAndQuestion("PPS", Question.OVERALL).get(FULLY_POSITIVE).longValue(),2);
+		assertEquals(ev.resultsCountForCourseAndQuestion("PPS", Question.OVERALL).get(Result.FULLY_POSITIVE).longValue(),2);
 		// etc..
-		assertEquals(ev.resultsCountForCourseAndQuestion("PPS", Question.OVERALL).get(WEAKLY_POSITIVE).longValue(),1);
-		assertEquals(ev.resultsCountForCourseAndQuestion("LPMC", Question.INTEREST).get(FULLY_POSITIVE).longValue(),2);
-		assertEquals(ev.resultsCountForCourseAndQuestion("LPMC", Question.INTEREST).get(FULLY_NEGATIVE).longValue(),2);
+		assertEquals(ev.resultsCountForCourseAndQuestion("PPS", Question.OVERALL).get(Result.WEAKLY_POSITIVE).longValue(),1);
+		assertEquals(ev.resultsCountForCourseAndQuestion("LPMC", Question.INTEREST).get(Result.FULLY_POSITIVE).longValue(),2);
+		assertEquals(ev.resultsCountForCourseAndQuestion("LPMC", Question.INTEREST).get(Result.FULLY_NEGATIVE).longValue(),2);
 	}
 	
 	@org.junit.Test
     public void testResultsCountForStudent() {
 		// lo student con matricola 1 ha risposto per 5 volte "decidamente si" in tutti i questionari che ha compilato
-		assertEquals(ev.resultsCountForStudent(1).get(FULLY_POSITIVE).longValue(),5);
+		assertEquals(ev.resultsCountForStudent(1).get(Result.FULLY_POSITIVE).longValue(),5);
 		// etc..
-		assertEquals(ev.resultsCountForStudent(1).get(WEAKLY_POSITIVE).longValue(),1);
-		assertEquals(ev.resultsCountForStudent(4).get(FULLY_POSITIVE).longValue(),1);
-		assertEquals(ev.resultsCountForStudent(4).get(WEAKLY_POSITIVE).longValue(),1);
-		assertEquals(ev.resultsCountForStudent(4).get(FULLY_NEGATIVE).longValue(),1);
+		assertEquals(ev.resultsCountForStudent(1).get(Result.WEAKLY_POSITIVE).longValue(),1);
+		assertEquals(ev.resultsCountForStudent(4).get(Result.FULLY_POSITIVE).longValue(),1);
+		assertEquals(ev.resultsCountForStudent(4).get(Result.WEAKLY_POSITIVE).longValue(),1);
+		assertEquals(ev.resultsCountForStudent(4).get(Result.FULLY_NEGATIVE).longValue(),1);
 	}
 	
 	@org.junit.Test(expected = IllegalStateException.class)
@@ -112,11 +111,11 @@ public class Test {
 	@org.junit.Test(expected = IllegalStateException.class)
 	public void optionalTestResultAlreadyLoaded() {
 		Map<Question,Result> results = new EnumMap<>(Question.class);
-		results.put(Question.OVERALL, FULLY_POSITIVE);
-		results.put(Question.INTEREST, FULLY_NEGATIVE);
-		results.put(Question.CLARITY, WEAKLY_POSITIVE);
+		results.put(Question.OVERALL, Result.FULLY_POSITIVE);
+		results.put(Question.INTEREST, Result.FULLY_NEGATIVE);
+		results.put(Question.CLARITY, Result.WEAKLY_POSITIVE);
 		builder.addEvaluationByMap("LPMC", 4, results); // già caricato i dati dello studente 4 per LPMC
     }
     
-    */
+    
 }

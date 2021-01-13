@@ -24,7 +24,7 @@ import java.util.*;
 
 public class Test {
 	
-	/*
+	
 	
 	@org.junit.Test
     public void testOf() {
@@ -73,6 +73,6 @@ public class Test {
         		Arrays.asList(1,1*2,1*2*3,1*2*3*1,1*2*3*1*2,1*2*3*1*2*3));
     }
     
-    */
+    
 	    
 }

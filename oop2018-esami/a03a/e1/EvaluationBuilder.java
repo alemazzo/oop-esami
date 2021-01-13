@@ -2,7 +2,7 @@ package a03a.e1;
 
 import java.util.Map;
 
-import a03a.sol1.Evaluation.*;
+import a03a.e1.Evaluation.*;
 
 /**
  * A builder of ConferenceReviewing, with fluent interface and method build() to be called just once

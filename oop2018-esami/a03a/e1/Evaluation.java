@@ -19,7 +19,7 @@ public interface Evaluation {
 	/**
 	 * To each question, the student must reply one of the following 4 options/evaluations
 	 */
-	enum Result {
+	public enum Result {
 		FULLY_NEGATIVE, // "Decisamente no", 
 		WEAKLY_NEGATIVE, // "Più no che si", 
 		WEAKLY_POSITIVE, // "Più si che no",  

@@ -1,6 +1,10 @@
 package a02b.e1;
 
+import java.util.List;
 import java.util.Set;
+
+import a02b.e1.ExamsFactory.OOPExamActivities;
+import a02b.e1.ExamsFactory.SimpleExamActivities;
 
 /**
  * An interface to model the activities to perform to pass a university exam, where certain activities can be done only if others have been completed before. 
@@ -31,4 +35,4 @@ public interface CourseExam<A> {
 	 */
 	boolean examOver();
 
-}
+}	

@@ -37,7 +37,7 @@ public class Test {
 	
 	private static final List<String> teams = Arrays.asList("Juve", "Inter", "Milan", "Napoli");
 	        
-	/*
+	
 	@org.junit.Test
     public void testStart() {
 		Championship c = new ChampionshipImpl();
@@ -198,5 +198,5 @@ public class Test {
 		assertEquals(c.getClassification().get("Napoli"),new Integer(11));
 	}
 	
-	*/
+	
 }

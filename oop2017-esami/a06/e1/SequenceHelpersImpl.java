@@ -24,7 +24,7 @@ public class SequenceHelpersImpl implements SequenceHelpers {
 
 	@Override
 	public <X> Sequence<X> cyclic(List<X> l) {
-		return this.fromStream(Stream.iterate(0, i -> (i + 1) % l.size()).map(l::get));
+		return this.fromStream(Stream.generate(() -> l).flatMap(List::stream));
 	}
 
 	@Override
